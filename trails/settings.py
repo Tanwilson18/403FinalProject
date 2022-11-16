@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'trails.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'trails',
+        'USER': 'postgres',
+        'PASSWORD': 'Medellin',  # Fix the password and the name later
+        'HOST': 'localhost',
     }
 }
 
@@ -120,7 +123,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '403Finalproject\static')
+    os.path.join(BASE_DIR, 'trails/static')
 ]
 
 # Default primary key field type
