@@ -78,10 +78,11 @@ WSGI_APPLICATION = 'trails.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'trails',
+        'NAME': 'UCTrailsProject',
         'USER': 'postgres',
-        'PASSWORD': 'Medellin',  # Fix the password and the name later
+        'PASSWORD': 'eand4851',
         'HOST': 'localhost',
+        # 'PORT': 5432,
     }
 }
 
@@ -125,6 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'trails/static')
 ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

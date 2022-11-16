@@ -1,10 +1,12 @@
 #from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 
 # Create your views here.
 def indexPageView(request):
-    return HttpResponse('This is where our home page will go :))))))))))))))!!!!!')
+    return render(request, 'trailsapp/index.html')
 
 def crudPageView(request):
     return HttpResponse('This is where our CRUD Page will go')

@@ -1,35 +1,35 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Business Casual - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <title>Utah County Trails</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" type="image/x-icon" href="{% static 'img/timp.png'%}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
-                <span class="site-heading-lower">Business Casual</span>
+                <span class="site-heading-upper text-primary mb-3">More Students Outside</span>
+                <span class="site-heading-lower">Utah County Trails</span>
             </h1>
         </header>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'index'%}">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'crud'%}">Trails</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'map'%}">Map</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{%url 'featured'%}">Featured</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,10 +40,11 @@
                     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/intro.jpg" alt="..." />
                     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                         <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Fresh Coffee</span>
-                            <span class="section-heading-lower">Worth Drinking</span>
+                            <span class="section-heading-upper">Hiking</span>
+                            <span class="section-heading-lower">So fun to do!</span>
                         </h2>
-                        <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!</p>
+                        <p class="mb-3">Utah is home to many scenic Hikes. Trails vary in length, elevation and skill level</p>
+                        <p class="mb-3"></p>
                         <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
                     </div>
                 </div>
@@ -58,14 +59,56 @@
                                 <span class="section-heading-upper">Our Promise</span>
                                 <span class="section-heading-lower">To You</span>
                             </h2>
-                            <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+                            <p class="mb-0">Utah! People working together
+                                Utah! What a great place to be.
+                                Blessed from Heaven above.
+                                It's the land that we love.
+                                This is the place!
+                                
+                                Utah! With its mountains and valleys.
+                                Utah! With its canyons and streams.
+                                You can go anywhere.
+                                But there's none that compare.
+                                This is the place!
+                                
+                                It was Brigham Young who led the pioneers across the plains.
+                                They suffered with the trials they had to face.
+                                With faith they kept on going till they reached the Great Salt Lake
+                                Here they heard the words..."THIS IS THE PLACE!"
+                                
+                                Utah! With its focus on family,
+                                Utah! Helps each child to succeed.
+                                People care how they live.
+                                Each has so much to give.
+                                This is the place!
+                                
+                                Utah! Getting bigger and better.
+                                Utah! Always leading the way.
+                                New technology's here...
+                                Growing faster each year.
+                                This is the place!
+                                
+                                There is beauty in the snow-capped mountains, in the lakes and streams.
+                                There are valleys filled with farms and orchards too.
+                                The spirit of its people shows in everything they do.
+                                Utah is the place where dreams come true.
+                                
+                                Utah! With its pioneer spirit.
+                                Utah! What a great legacy!
+                                Blessed from Heaven above.
+                                It's the land that we love.
+                                This is the place
+                                
+                                Utah! Utah! Utah!
+                                THIS IS THE PLACE!
+                                </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2022</p></div>
+            <div class="container"><p class="m-0 small">Copyright &copy; THE SQUADABOTS 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
