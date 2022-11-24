@@ -9,12 +9,12 @@ def indexPageView(request):
 
 
 def crudPageView(request):
-    return HttpResponse('trailsapp/crud.html')
+    return render(request, 'trailsapp/crud.html')
 
 
 def featuredPageView(request):
-    return HttpResponse('This is where our featured trails will go')
+    return render(request, 'trailsapp/featured.html')
 
 
 def mapPageView(request):
-    return HttpResponse('This is where our map Page will go!! YAY FOR MAPS')
+    return render(request, 'trailsapp/map.html')

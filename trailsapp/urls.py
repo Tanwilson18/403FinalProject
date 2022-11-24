@@ -11,4 +11,3 @@ urlpatterns = [
     path('map/', mapPageView, name='map'),
     path('', indexPageView, name='index'),
 ]
-
