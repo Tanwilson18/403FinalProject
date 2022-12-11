@@ -2,6 +2,7 @@ from django.db import models
 
 # models (classes)
 
+
 class trails(models.Model):
     trail_id = models.IntegerField()
     trail_name = models.CharField(max_length=50)
