@@ -28,10 +28,9 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'index'%}">Home</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'create'%}">Trails</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'showtrails'%}">Trails</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'map'%}">Map</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'featured'%}">Featured</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout'%}">Log Out</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout'%}">Logout</a></li>
                         {% else %} 
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'login'%}">Log In</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'register'%}">Create Account</a></li>

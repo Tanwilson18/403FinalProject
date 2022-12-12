@@ -2993,7 +2993,7 @@ textarea.form-control-lg {
 }
 
 .btn {
-  display: inline-block;
+  display: inline;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -3033,6 +3033,7 @@ textarea.form-control-lg {
   color: #000;
   background-color: #e6a756;
   border-color: #e6a756;
+  display: inline;
 }
 .btn-primary:hover {
   color: #000;
@@ -7775,7 +7776,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #fff !important;
 }
 
 .text-black-50 {
@@ -11420,6 +11421,9 @@ p {
 }
 
 .footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
   background-color: rgba(47, 23, 15, 0.9);
 }
 

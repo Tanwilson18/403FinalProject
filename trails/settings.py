@@ -1,3 +1,6 @@
+# Authored by: Daniel Decker, Sydney Hull, Jaeda Waldram, Ellie Ward, Tanner Wilson
+# Trail Database Website for trails in UT County
+
 """
 Django settings for trails project.
 

@@ -9,7 +9,7 @@ class trails(models.Model):
     length_miles = models.FloatField()
     difficulty = models.CharField(max_length=15)
     completion_time = models.CharField(max_length=15)
-    img_url = models.CharField(max_length=100)
+    img_url = models.CharField(max_length=500)
     description = models.CharField(max_length=1000)
     location = models.CharField(max_length=75)
 

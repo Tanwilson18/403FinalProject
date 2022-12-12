@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style='padding:70px;'>
+    <h2>{{trail.trail_name}}</h2>
+    <h5>Info:</h5>
+    <ul>
+        <li>Length in Miles: {{ trail.length_miles }}</li>
+        <li>Difficulty: {{ trail.difficulty }}</li>
+        <li>Completion Time: {{trail.completion_time}}</li>
+        <li>Location: {{trail.location}}</li>
+    </ul>
+    <h5>Description: </h5>
+    <p>{{trail.description}}</p>
+</div>
+{% endblock %}

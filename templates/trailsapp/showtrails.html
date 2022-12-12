@@ -2,23 +2,60 @@
 {% load static %}
 {% block content %}
 
-<div class='container'>
+<div class='container'><br>
     <h1><b>Trail List</b></h1>
-    {% for trail in traillist %}
-    <p>
-        {{ trail.trail_name }}, {{ trail.length_miles }}, {{ trail.difficulty }}
+
+    <table style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr>
+                <th>Trail Name</th>
+                <th>Length in Miles</th>
+                <th>Difficulty</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trail in traillist%}
+            <tr>
+                <td>{{ trail.trail_name }}</td>
+                <td>{{ trail.length_miles }}</td>
+                <td>{{ trail.difficulty }}</td>
+                <td> 
+                    <a class='btn btn-primary' data-inline="true" href="{% url 'viewtrail' trail_id=trail.trail_id %}">View Info</a>
+                </td>
+                <td>
+                    <form name="form" method="post" action="{% url 'update' %}">
+                        {% csrf_token %}
+                        <input type="hidden" id="trail_id" name="trail_id" value="{{trail.trail_id}}">
+                        <button class='btn btn-primary' data-inline="true">Edit</button>
+                    </form>  
+                </td>
+                <td>
+                    <a class='btn btn-primary' data-inline="true" href="{% url 'delete' trail_id=trail.trail_id %}">Delete</a>
+                </td>
+
+                <td>
+                    {% comment %} <a href="{% url 'user_detail' user.id %}">View</a>
+                    <a href="{% url 'user_update' user.id %}">Edit</a>
+                    <a href="{% url 'user_delete' user.id %}" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a> {% endcomment %}
+                </td>
+            </tr>
+            {% endfor %}
+            {% comment %} {% endfor %} {% endcomment %}
+        </tbody>
+    </table>
+    {% comment %} {% for trail in traillist %} 
+        
+        <h5>{{ trail.trail_name }}, {{ trail.length_miles }}, {{ trail.difficulty }}</h5> {% endcomment %}
         {% comment %} <a class='btn btn-primary' href="{% url 'update' trail_id=trails.id %}">Edit</a> {% endcomment %}
-        <form name="form" method="post" action="{% url 'update' %}">
-            {% csrf_token %}
-            <input type="hidden" id="trail_id" name="trail_id" value="{{trail.trail_id}}">
-            <button class='btn btn-primary'>Edit</button>
-            <br>
-        </form> 
-        {% comment %} <a class='btn btn-primary' href="{% url 'update' trail_id=trials.id %}">See more</a> {% endcomment %}
-        {% comment %} <a class='btn btn-primary' href="{% url 'delete' trail_id=traillist.id %}">Delete</a> {% endcomment %}
-    </p>
-    {% endfor %}
+        
+        {% comment %} <a class='btn btn-primary' href="{% url 'update' trail_id=trails.id %}">See more</a>  {% endcomment %}
+        
+    
+
+    <br>
+    <h5>Add a New Trail</h5>
     <a class="btn btn-primary" href="{% url 'create' %}">New Trail</a>
+    <br><br>
 </div>
 
 {% endblock %}

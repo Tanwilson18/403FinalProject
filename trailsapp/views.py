@@ -17,7 +17,6 @@ def indexPageView(request):
 def createPageView(request):
     if request.method == "POST":
         trail = trails()
-        trail.trail_id = request.POST['trail_id']
         trail.trail_name = request.POST['trail_name']
         trail.length_miles = request.POST['length_miles']
         trail.difficulty = request.POST['difficulty']
@@ -28,7 +27,7 @@ def createPageView(request):
 
         trail.save()
 
-        return indexPageView(request)
+        return showTrailsPageView(request)
     else:
         return render(request, 'trailsapp/create.html')
 
@@ -42,10 +41,6 @@ def showTrailsPageView(request):
     return render(request, 'trailsapp/showtrails.html', context)
 
 
-def featuredPageView(request):
-    return render(request, 'trailsapp/featured.html')
-
-
 def mapPageView(request):
     return render(request, 'trailsapp/map.html')
 
@@ -57,6 +52,43 @@ def updatePageView(request):
         "record": data
     }
     return render(request, 'trailsapp/update.html', context)
+
+
+def makeUpdatePageView(request):
+    trail_ID = request.POST['trail_id']
+    trail = trails.objects.get(trail_id=trail_ID)
+    trail.trail_id = request.POST['trail_id']
+    trail.trail_name = request.POST['trail_name']
+    trail.length_miles = request.POST['length_miles']
+    trail.difficulty = request.POST['difficulty']
+    trail.completion_time = request.POST['completion_time']
+    trail.img_url = request.POST['img_url']
+    trail.description = request.POST['description']
+    trail.location = request.POST['location']
+    trail.save()
+
+    data = trails.objects.all()
+
+    context = {
+        "traillist": data
+    }
+    return render(request, 'trailsapp/showtrails.html', context)
+
+
+def deleteTrailPageView(request, trail_id):
+    data = trails.objects.get(trail_id=trail_id)
+
+    data.delete()
+
+    return showTrailsPageView(request)
+
+
+def viewOneTrailView(request, trail_id):
+    data = trails.objects.get(trail_id=trail_id)
+    context = {
+        "trail": data
+    }
+    return render(request, 'trailsapp/viewtrail.html', context)
 
 # login pages
 
@@ -99,11 +131,3 @@ def logout_request(request):
     messages.info(request, "You have successfully logged out.")
     logout(request)
     return render(request, 'logout.html')
-
-
-def deleteTrailPageView(request, trail_id):
-    data = trails.objects.get(id=trail_id)
-
-    data.delete()
-
-    return showTrailsPageView(request)
