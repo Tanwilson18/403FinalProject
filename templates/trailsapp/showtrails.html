@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class='container'>
+    <h1><b>Trail List</b></h1>
+    {% for trail in traillist %}
+    <p>
+        {{ trail.trail_name }}, {{ trail.length_miles }}, {{ trail.difficulty }}
+        {% comment %} <a class='btn btn-primary' href="{% url 'update' trail_id=trails.id %}">Edit</a> {% endcomment %}
+        <form name="form" method="post" action="{% url 'update' %}">
+            {% csrf_token %}
+            <input type="hidden" id="trail_id" name="trail_id" value="{{trail.trail_id}}">
+            <button class='btn btn-primary'>Edit</button>
+            <br>
+        </form> 
+        {% comment %} <a class='btn btn-primary' href="{% url 'update' trail_id=trials.id %}">See more</a> {% endcomment %}
+        {% comment %} <a class='btn btn-primary' href="{% url 'delete' trail_id=traillist.id %}">Delete</a> {% endcomment %}
+    </p>
+    {% endfor %}
+    <a class="btn btn-primary" href="{% url 'create' %}">New Trail</a>
+</div>
+
+{% endblock %}

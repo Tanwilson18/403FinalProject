@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}      
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <br><br>
+    <h1>You have successfully logged out</h1>
+    <br>
+
+    <a class="btn btn-primary" href = "{% url 'index' %}">Return Home</a>
+    <a class="btn btn-primary" href = "{% url 'login' %}">Login Again</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+</div>
+
+{%endblock%}

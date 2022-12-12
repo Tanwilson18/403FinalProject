@@ -1,7 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 Create New Trail Record here
+<form name='form' method='post' action="{%url 'create' %}">
+    {% csrf_token %}
+    <!-- make this hidden or don't include lol
+    <label for='trail_id'>Trail ID:</label>
+    <input type='text' name='trail_id' id='trail_id' autofocus> 
+    <br><br>
+     end hidden id -->
+
+    {{ form | crispy }}
+
+    <label for='trail_name'>Trail Name:</label>
+    <input type='text' name='trail_name' id='trail_name'>
+    <br><br>
+
+    <label for='length_miles'>Length in Miles:</label>
+    <input type='text' name='length_miles' id='length_miles'>
+    <br><br>
+
+    <label for='difficulty'>Difficulty:</label>
+    <input type='text' name='difficulty' id='difficulty'>
+    <br><br>
+
+    <label for='completion_time'>Completion Time:</label>
+    <input type='text' name='completion_time' id='completion_time'>
+    <br><br>
+
+    <label for='img_url'>Img URL:</label>
+    <input type='text' name='img_url' id='img_url'>
+    <br><br>
+
+    <label for='description'>Description:</label>
+    <input type='text' name='description' id='description'>
+    <br><br>
+
+    <label for='location'>Location:</label>
+    <input type='text' name='location' id='location'>
+    <br><br>
+
+    <button type='submit'>Add</button>
+</form>
 
 {% endblock %}

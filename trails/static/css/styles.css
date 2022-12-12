@@ -60,7 +60,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #fff;
   --bs-body-bg: #fff;
 }
 
@@ -3945,6 +3945,7 @@ textarea.form-control-lg {
   padding: 0.5rem 1rem;
   color: #e6a756;
   text-decoration: none;
+  letter-spacing: .5rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3985,6 +3986,7 @@ textarea.form-control-lg {
   color: #495057;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
+
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -4075,6 +4077,7 @@ textarea.form-control-lg {
 .navbar-text {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  letter-spacing: 1rem;
 }
 
 .navbar-collapse {
