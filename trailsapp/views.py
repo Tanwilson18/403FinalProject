@@ -21,7 +21,6 @@ def createPageView(request):
         trail.length_miles = request.POST['length_miles']
         trail.difficulty = request.POST['difficulty']
         trail.completion_time = request.POST['completion_time']
-        trail.img_url = request.POST['img_url']
         trail.description = request.POST['description']
         trail.location = request.POST['location']
 
@@ -62,7 +61,6 @@ def makeUpdatePageView(request):
     trail.length_miles = request.POST['length_miles']
     trail.difficulty = request.POST['difficulty']
     trail.completion_time = request.POST['completion_time']
-    trail.img_url = request.POST['img_url']
     trail.description = request.POST['description']
     trail.location = request.POST['location']
     trail.save()
